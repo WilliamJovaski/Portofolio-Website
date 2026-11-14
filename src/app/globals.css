@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+/* ================================================================ PALET (5 warna)
+   Satu-satunya sumber warna di website. Semua token Tailwind di @theme diturunkan dari sini. */
+:root {
+  --varden: #f5f0e8; /* background utama semua halaman */
+  --gochujang-red: #780000; /* merah tua: blok gelap, teks putih di atasnya */
+  --crimson-blaze: #c1121f; /* aksen merah: chip/tab/stiker (teks putih), teks aksen di atas Varden */
+  --cosmos-blue: #003049; /* teks utama, border, bayangan keras, tombol solid */
+  --blue-marble: #669bbc; /* aksen biru: blok terang (teks Cosmos di atasnya) */
+}
+
+/* Token Tailwind (bg-yellow, text-pink, ...). Nama lama dipertahankan supaya tidak ada komponen yang berubah
+   struktur; nilainya sekarang dipetakan ke palet di atas.
+   Aturan kontras (WCAG AA):
+   - Latar terang (paper, yellow, sky, peach, mint, beige, blue) -> teks Cosmos (text-ink).
+   - Latar gelap (pink, green, ink) -> teks putih.
+   Tint terang = palet dicampur Varden (color-mix), jadi tetap turunan dari 5 warna. */
+@theme {
+  --color-paper: var(--varden);
+  --color-paper-line: color-mix(in srgb, var(--cosmos-blue) 10%, transparent);
+  --color-paper-light: color-mix(in srgb, var(--varden), white 65%);
+  --color-yellow: color-mix(in srgb, var(--blue-marble) 45%, var(--varden)); /* highlight utama (nav aktif, tombol) */
+  --color-pink: var(--crimson-blaze);
+  --color-green: var(--gochujang-red);
+  --color-blue: var(--blue-marble);
+  --color-sky: color-mix(in srgb, var(--blue-marble) 30%, var(--varden));
+  --color-peach: color-mix(in srgb, var(--crimson-blaze) 22%, var(--varden));
+  --color-mint: color-mix(in srgb, var(--cosmos-blue) 12%, var(--varden));
+  --color-beige: color-mix(in srgb, var(--gochujang-red) 10%, var(--varden));
+  --color-ink: var(--cosmos-blue);
+
+  /* Bayangan: "hard" untuk elemen UI (tombol, chip, kartu, tile), "paper" untuk benda kertas/foto */
+  --shadow-hard-sm: 2px 2px 0 var(--color-ink);
+  --shadow-hard: 3px 3px 0 var(--color-ink);
+  --shadow-hard-lg: 5px 5px 0 var(--color-ink);
+  --shadow-paper: 0 8px 20px color-mix(in srgb, var(--color-ink) 14%, transparent);
+  --shadow-paper-lg: 0 18px 40px color-mix(in srgb, var(--color-ink) 20%, transparent);
+  /* drop-shadow untuk elemen ber-clip-path / SVG (sticky note sobek, stiker) */
+  --drop-shadow-note: 2px 3px 0 color-mix(in srgb, var(--color-ink) 14%, transparent);
+  --drop-shadow-paper: 0 4px 8px color-mix(in srgb, var(--color-ink) 14%, transparent);
+
+  --font-pixel: var(--font-pixel-face), ui-monospace, monospace;
+  --font-hand: var(--font-hand-face), "Comic Sans MS", cursive;
+  --font-sans: var(--font-sans-face), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-face), ui-monospace, monospace;
+
+  --animate-float: float 5s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+}
+
+html {
+  /* Anchor (#id) tidak tertutup navbar sticky (tinggi 56px) */
+  scroll-padding-top: 4.5rem;
+}
+
+html,
+body {
+  /* Dekorasi miring tidak boleh membuat scroll horizontal (clip tidak merusak position: sticky) */
+  overflow-x: clip;
+}
+
+body {
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  background-color: var(--color-paper);
+  /* Kertas buku catatan: garis horizontal tipis tiap 28px */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 27px,
+    var(--color-paper-line) 27px,
+    var(--color-paper-line) 28px
+  );
+}
+
+/* Latar kertas notebook yang sama, untuk layer full-screen (mis. intro folder) */
+.notebook-bg {
+  background-color: var(--color-paper);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 27px,
+    var(--color-paper-line) 27px,
+    var(--color-paper-line) 28px
+  );
+}
+
+/* Layar desktop yang cukup tinggi & animasi diizinkan: section TECH STACK memakai mode sticky */
+@custom-variant tall (@media (width >= 64rem) and (height >= 50rem) and (prefers-reduced-motion: no-preference));
+
+/* Skala jarak yang sama di semua halaman */
+@utility page-top {
+  padding-top: 3.5rem;
+  @media (width >= 48rem) {
+    padding-top: 5rem;
+  }
+}
+@utility section-y {
+  padding-block: 4rem;
+  @media (width >= 48rem) {
+    padding-block: 6rem;
+  }
+}
+
+::selection {
+  background-color: var(--color-yellow);
+  color: var(--color-ink);
+}
+
+/* Fokus keyboard selalu terlihat */
+:focus-visible {
+  outline: 2px dashed var(--color-ink);
+  outline-offset: 3px;
+}
+
+/* Sembunyikan scrollbar untuk baris menu yang bisa di-scroll di mobile */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float {
+    animation: none;
+  }
+}

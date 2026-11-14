@@ -1,0 +1,209 @@
+[
+  {
+    "id": "daily-balcony-ultrawide-selfie",
+    "src": "/images/gallery/daily/balcony-ultrawide-selfie.jpg",
+    "category": "daily",
+    "alt": "balcony ultrawide selfie",
+    "width": 1600,
+    "height": 2844,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "daily-birthday-cake-surprise",
+    "src": "/images/gallery/daily/birthday-cake-surprise.jpg",
+    "category": "daily",
+    "alt": "birthday cake surprise",
+    "width": 1600,
+    "height": 2844,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "daily-cfd-phinla-campaign",
+    "src": "/images/gallery/daily/cfd-phinla-campaign.jpg",
+    "category": "daily",
+    "alt": "cfd phinla campaign",
+    "width": 1600,
+    "height": 2844,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "daily-childhood-throwback",
+    "src": "/images/gallery/daily/childhood-throwback.jpg",
+    "category": "daily",
+    "alt": "childhood throwback",
+    "width": 453,
+    "height": 604,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "daily-cultural-day-campus",
+    "src": "/images/gallery/daily/cultural-day-campus.jpg",
+    "category": "daily",
+    "alt": "cultural day campus",
+    "width": 780,
+    "height": 1040,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "daily-fyp-cinema-break",
+    "src": "/images/gallery/daily/fyp-cinema-break.jpg",
+    "category": "daily",
+    "alt": "fyp cinema break",
+    "width": 1600,
+    "height": 2844,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "daily-home-sweet-home",
+    "src": "/images/gallery/daily/home-sweet-home.jpg",
+    "category": "daily",
+    "alt": "home sweet home",
+    "width": 1600,
+    "height": 2844,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "daily-honest-exam-squad",
+    "src": "/images/gallery/daily/honest-exam-squad.jpg",
+    "category": "daily",
+    "alt": "honest exam squad",
+    "width": 1600,
+    "height": 2844,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "daily-pizza-donuts-hangout",
+    "src": "/images/gallery/daily/pizza-donuts-hangout.jpg",
+    "category": "daily",
+    "alt": "pizza donuts hangout",
+    "width": 1600,
+    "height": 900,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "food-burger-and-fries",
+    "src": "/images/gallery/food/burger-and-fries.jpg",
+    "category": "food",
+    "alt": "burger and fries",
+    "width": 4536,
+    "height": 3024,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "food-chocolate-croissant-cafe",
+    "src": "/images/gallery/food/chocolate-croissant-cafe.jpg",
+    "category": "food",
+    "alt": "chocolate croissant cafe",
+    "width": 3025,
+    "height": 4536,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "food-christmas-eve-pasta",
+    "src": "/images/gallery/food/christmas-eve-pasta.jpg",
+    "category": "food",
+    "alt": "christmas eve pasta",
+    "width": 2687,
+    "height": 4031,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "food-hotplate-tongseng",
+    "src": "/images/gallery/food/hotplate-tongseng.jpg",
+    "category": "food",
+    "alt": "hotplate tongseng",
+    "width": 1600,
+    "height": 2844,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "things-arjuno-summit-monument",
+    "src": "/images/gallery/things/arjuno-summit-monument.jpg",
+    "category": "things",
+    "alt": "arjuno summit monument",
+    "width": 1600,
+    "height": 2844,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "things-hiradraw-live-demo",
+    "src": "/images/gallery/things/hiradraw-live-demo.jpg",
+    "category": "things",
+    "alt": "hiradraw live demo",
+    "width": 1600,
+    "height": 900,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "things-holybin-prototype-demo",
+    "src": "/images/gallery/things/holybin-prototype-demo.jpg",
+    "category": "things",
+    "alt": "holybin prototype demo",
+    "width": 1600,
+    "height": 2844,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "things-maybank-marathon-gate",
+    "src": "/images/gallery/things/maybank-marathon-gate.jpg",
+    "category": "things",
+    "alt": "maybank marathon gate",
+    "width": 2268,
+    "height": 4032,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "travel-basecamp-ready-ascend",
+    "src": "/images/gallery/travel/basecamp-ready-ascend.jpg",
+    "category": "travel",
+    "alt": "basecamp ready ascend",
+    "width": 1600,
+    "height": 2844,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "travel-dufan-day-out",
+    "src": "/images/gallery/travel/dufan-day-out.jpg",
+    "category": "travel",
+    "alt": "dufan day out",
+    "width": 1600,
+    "height": 2844,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "travel-forest-trail-checkpoint",
+    "src": "/images/gallery/travel/forest-trail-checkpoint.jpg",
+    "category": "travel",
+    "alt": "forest trail checkpoint",
+    "width": 1600,
+    "height": 2844,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "travel-misty-mountain-trail",
+    "src": "/images/gallery/travel/misty-mountain-trail.jpg",
+    "category": "travel",
+    "alt": "misty mountain trail",
+    "width": 3024,
+    "height": 4032,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "travel-river-rafting-crew",
+    "src": "/images/gallery/travel/river-rafting-crew.jpg",
+    "category": "travel",
+    "alt": "river rafting crew",
+    "width": 1600,
+    "height": 2133,
+    "modified": "2026-11-14"
+  },
+  {
+    "id": "travel-sunrise-mountain-ridge",
+    "src": "/images/gallery/travel/sunrise-mountain-ridge.jpg",
+    "category": "travel",
+    "alt": "sunrise mountain ridge",
+    "width": 1600,
+    "height": 2844,
+    "modified": "2026-11-14"
+  }
+]
