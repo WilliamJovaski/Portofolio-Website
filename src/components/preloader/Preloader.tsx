@@ -3,18 +3,18 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 
-// Daftar bahasa dengan karakter unik dan warna masing-masing
+// Daftar bahasa dengan karakter unik dan warna keluarga biru dari design tokens
 const greetings = [
-  { text: "Hello.", color: "var(--cosmos-blue)" },        // Inggris
-  { text: "Halo.", color: "var(--crimson-blaze)" },         // Indonesia
-  { text: "Bonjour.", color: "var(--gochujang-red)" },      // Prancis
-  { text: "Ciao.", color: "var(--cosmos-blue)" },         // Italia
-  { text: "こんにちは.", color: "var(--crimson-blaze)" },     // Jepang
-  { text: "नमस्ते.", color: "var(--gochujang-red)" },          // India
-  { text: "Привет.", color: "var(--cosmos-blue)" },       // Rusia
-  { text: "안녕하세요.", color: "var(--crimson-blaze)" },       // Korea
-  { text: "مرحباً.", color: "var(--gochujang-red)" },         // Arab
-  { text: "你好.", color: "var(--cosmos-blue)" }           // Mandarin
+  { text: "Hello.", color: "var(--color-ink)" },        // Inggris
+  { text: "Halo.", color: "var(--color-blue)" },         // Indonesia
+  { text: "Bonjour.", color: "var(--color-green)" },      // Prancis
+  { text: "Ciao.", color: "var(--color-ink)" },         // Italia
+  { text: "こんにちは.", color: "var(--color-blue)" },     // Jepang
+  { text: "नमस्ते.", color: "var(--color-green)" },          // India
+  { text: "Привет.", color: "var(--color-ink)" },       // Rusia
+  { text: "안녕하세요.", color: "var(--color-blue)" },       // Korea
+  { text: "مرحباً.", color: "var(--color-green)" },         // Arab
+  { text: "你好.", color: "var(--color-ink)" }           // Mandarin
 ];
 
 interface PreloaderProps {

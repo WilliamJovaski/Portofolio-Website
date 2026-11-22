@@ -37,7 +37,7 @@ function GitHubIcon({ size = 16 }: { size?: number }) {
   );
 }
 
-/** Tombol aksi proyek: "View Project" (Primary CTA: Blue solid) & "View Repository" (Secondary: White outline). */
+/** Tombol aksi proyek: "View Project" (Primary CTA: Sunny Morning + teks Deep Navy) & "View Repository" (Secondary: White + Sky Blue). */
 export default function ProjectActionButtons({
   slug,
   title,
@@ -53,7 +53,7 @@ export default function ProjectActionButtons({
     <div className={cn("relative z-10 flex flex-wrap items-center gap-3", className)}>
       {isUpcoming && !showViewProject && !hasRepo && (
         <span className="inline-flex min-h-10 items-center gap-2.5 rounded-full border-[1.5px] border-dashed border-ink bg-paper-light px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-ink">
-          <span aria-hidden="true" className="size-2.5 rounded-full border border-ink bg-blue" />
+          <span aria-hidden="true" className="size-2.5 rounded-full border border-ink bg-primary" />
           <span>Upcoming · On Progress</span>
         </span>
       )}
@@ -64,7 +64,7 @@ export default function ProjectActionButtons({
           onClick={(e) => e.stopPropagation()}
           className={cn(
             btnBase,
-            "border-ink bg-primary text-white hover:bg-primary-hover active:bg-ink"
+            "border-ink bg-primary text-ink hover:bg-primary-hover active:bg-primary-active"
           )}
         >
           <span>{caseStudy.viewLabel}</span>
@@ -81,7 +81,7 @@ export default function ProjectActionButtons({
           onClick={(e) => e.stopPropagation()}
           className={cn(
             btnBase,
-            "border-primary bg-white text-primary-hover hover:border-ink hover:bg-sky hover:text-ink active:bg-yellow"
+            "border-link bg-white text-link hover:border-ink hover:bg-sky hover:text-ink active:bg-peach"
           )}
         >
           <GitHubIcon size={16} />

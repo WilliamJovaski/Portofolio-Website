@@ -35,7 +35,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="grid size-11 min-h-[44px] min-w-[44px] place-items-center rounded-full border-[1.5px] border-primary bg-white text-primary-hover shadow-hard-sm transition-[translate,background-color,color,border-color] hover:-translate-y-0.5 hover:border-ink hover:bg-sky hover:text-ink active:translate-y-0 active:bg-yellow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-focus md:size-9 md:min-h-0 md:min-w-0"
+                className="grid size-11 min-h-[44px] min-w-[44px] place-items-center rounded-full border-[1.5px] border-link bg-white text-link shadow-hard-sm transition-[translate,background-color,color,border-color] hover:-translate-y-0.5 hover:border-ink hover:bg-sky hover:text-ink active:translate-y-0 active:bg-peach focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-focus md:size-9 md:min-h-0 md:min-w-0"
               >
                 <Icon name={s.icon} size={16} />
               </a>

@@ -57,7 +57,7 @@ export default function ContactPage() {
       </SelectionBox>
 
       <div className="mx-auto mt-10 max-w-xl">
-        <StickyNote color="yellow" rotate={-1.5} className="p-6 text-left md:p-8">
+        <StickyNote color="sky" rotate={-1.5} className="p-6 text-left md:p-8">
           <p className="font-mono text-[13px] uppercase leading-relaxed tracking-wide">{contact.cardText}</p>
           <a
             href={mailto}
@@ -89,7 +89,7 @@ export default function ContactPage() {
               href={s.href}
               target="_blank"
               rel="noreferrer"
-              className="flex flex-col items-center gap-1 rounded-sm px-4 py-2 transition-colors hover:bg-yellow"
+              className="flex flex-col items-center gap-1 rounded-sm px-4 py-2 text-link transition-colors hover:bg-sky hover:text-ink active:bg-peach focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-focus"
             >
               <Icon name={s.icon} size={18} />
               <span className="font-mono text-[10px] uppercase tracking-wider">{s.label}</span>

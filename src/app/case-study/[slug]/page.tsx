@@ -89,7 +89,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps<"/case-s
     <article className="page-top mx-auto max-w-6xl px-4">
       <Link
         href="/case-study"
-        className="group inline-flex min-h-[44px] items-center gap-2.5 rounded-full border-[1.5px] border-primary bg-white px-4 py-2 font-mono text-sm font-bold uppercase tracking-wider text-primary-hover shadow-hard-sm transition-all duration-150 hover:-translate-y-0.5 hover:border-ink hover:bg-sky hover:text-ink hover:shadow-hard active:translate-y-0 active:bg-yellow active:shadow-none focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-dashed focus-visible:outline-focus"
+        className="group inline-flex min-h-[44px] items-center gap-2.5 rounded-full border-[1.5px] border-link bg-white px-4 py-2 font-mono text-sm font-bold uppercase tracking-wider text-link shadow-hard-sm transition-all duration-150 hover:-translate-y-0.5 hover:border-ink hover:bg-sky hover:text-ink hover:shadow-hard active:translate-y-0 active:bg-peach active:shadow-none focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-dashed focus-visible:outline-focus"
       >
         <Icon
           name="arrow-right"

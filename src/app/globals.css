@@ -1,52 +1,55 @@
 @import "tailwindcss";
 
-/* ================================================================ PALET (6 warna basis wajib)
-   Satu-satunya sumber warna di website. Semua token Tailwind di @theme diturunkan dari sini. */
+/* ================================================================ PALET (Sky Blue, Sunny Morning, White)
+   Satu-satunya sumber warna di website. Semua token Tailwind di @theme diturunkan dari keluarga biru, kuning, dan putih. */
 :root {
-  --palette-blue: #0077cc; /* Primary CTA, aksen interaktif utama */
-  --palette-light-blue: #0ea5e9; /* Aksen cerah (wajib teks gelap #0F172A di atasnya), basis tint permukaan */
-  --palette-dark-blue: #004a80; /* Primary CTA hover/active, link teks, blok gelap */
-  --palette-black: #0f172a; /* Teks utama, heading, border utama, bayangan keras */
-  --palette-white: #ffffff; /* Permukaan kartu putih, tombol sekunder, teks di atas warna gelap */
-  --palette-light-grey: #f8fafc; /* Background utama semua halaman */
+  --palette-sky-blue: #0153b3; /* Biru dominan utama */
+  --palette-sunny: #fecf02; /* Aksen kuning: tombol utama (Primary CTA), penanda aktif, highlight kecil */
+  --palette-white: #ffffff; /* Putih murni: permukaan kartu, tombol sekunder, teks di atas biru tua */
+
+  /* Shade biru gelap (turunan langsung keluarga Sky Blue #0153B3) */
+  --palette-dark-blue: #013a7d; /* Biru tua untuk hover link/blok biru gelap */
+  --palette-deep-navy: #001e42; /* Biru sangat gelap untuk teks utama, border, shadow, dan teks di atas kuning */
 }
 
 /* Token Tailwind & Design Tokens.
    Aturan kontras (WCAG AA >= 4.5:1):
-   - Latar terang (paper, paper-light, white, yellow, sky, peach, mint, beige, blue #0EA5E9) -> teks Black (#0F172A).
-   - Latar gelap (primary #0077CC, primary-hover #004A80, pink #0077CC, green #004A80, ink #0F172A) -> teks White (#FFFFFF). */
+   - Kuning (#FECF02 / #FFEB95) SELALU dipasangkan dengan teks biru sangat gelap (--color-ink #001E42, kontras 11.18:1 - 13.90:1).
+   - Kuning TIDAK PERNAH dipakai sebagai teks/ikon di atas background putih atau terang.
+   - Kuning sebagai teks HANYA dipakai di atas background biru (--color-blue #0153B3 -> 4.89:1, --color-green #013A7D -> 7.43:1, --color-ink #001E42 -> 11.18:1).
+   - Background biru gelap (blue #0153B3, pink #014BA2, green #013A7D, ink #001E42) memakai teks putih (#FFFFFF -> 7.27:1 s/d 16.61:1) atau kuning (#FECF02). */
 @theme {
-  /* Token semantik utama */
-  --color-paper: var(--palette-light-grey);
-  --color-paper-light: var(--palette-white);
-  --color-paper-line: color-mix(in srgb, var(--palette-dark-blue) 11%, transparent);
+  /* Token permukaan & teks utama (Dominan Biru & Putih) */
+  --color-paper: color-mix(in srgb, var(--palette-sky-blue) 5%, var(--palette-white)); /* #F2F6FB - biru sangat pucat untuk background halaman */
+  --color-paper-light: var(--palette-white); /* #FFFFFF - permukaan kartu & polaroid */
+  --color-paper-line: color-mix(in srgb, var(--palette-sky-blue) 12%, transparent); /* garis buku catatan biru halus */
   --color-white: var(--palette-white);
-  --color-ink: var(--palette-black);
+  --color-ink: var(--palette-deep-navy); /* #001E42 - teks utama, heading, border, teks di atas kuning */
 
-  /* Token interaktif (hierarki tombol, link, fokus) */
-  --color-primary: var(--palette-blue);
-  --color-primary-hover: var(--palette-dark-blue);
-  --color-link: var(--palette-dark-blue);
-  --color-link-hover: var(--palette-blue);
-  --color-focus: var(--palette-blue);
+  /* Token interaktif (Hierarki Tombol, Link, Fokus) */
+  --color-primary: var(--palette-sunny); /* #FECF02 - Primary CTA & state aktif (teks #001E42, 11.18:1) */
+  --color-primary-hover: color-mix(in srgb, var(--palette-sunny) 76%, var(--palette-white)); /* #FEDB3F - Primary CTA hover (teks #001E42, 12.19:1) */
+  --color-primary-active: color-mix(in srgb, var(--palette-sunny) 90%, var(--palette-deep-navy)); /* #E5BD08 - Primary CTA active (teks #001E42, 9.19:1) */
+  --color-link: var(--palette-sky-blue); /* #0153B3 - Link teks & tombol sekunder (6.70:1 di paper, 7.27:1 di white) */
+  --color-link-hover: var(--palette-dark-blue); /* #013A7D - Link hover (10.17:1 di paper, 11.04:1 di white) */
+  --color-focus: var(--palette-sky-blue); /* #0153B3 - Outline fokus terlihat jelas di latar terang */
 
-  /* Token aksen & permukaan kartu/stiker (turunan murni dari 6 warna palet) */
-  --color-yellow: color-mix(in srgb, var(--palette-light-blue) 28%, var(--palette-white)); /* #BCE6F9 - highlight & sticky note aktif */
-  --color-pink: var(--palette-blue); /* #0077CC - aksen biru solid (teks putih, 4.66:1) */
-  --color-green: var(--palette-dark-blue); /* #004A80 - aksen biru tua solid (teks putih, 9.17:1) */
-  --color-blue: var(--palette-light-blue); /* #0EA5E9 - aksen biru cerah (teks hitam #0F172A, 6.44:1) */
-  --color-sky: color-mix(in srgb, var(--palette-light-blue) 20%, var(--palette-light-grey)); /* #C8E8F8 - tint biru langit */
-  --color-peach: color-mix(in srgb, var(--palette-blue) 15%, var(--palette-light-grey)); /* #D3E6F5 - tint biru es */
-  --color-mint: color-mix(in srgb, var(--palette-dark-blue) 12%, var(--palette-light-grey)); /* #DAE5EE - tint biru-abu */
-  --color-beige: color-mix(in srgb, var(--palette-black) 7%, var(--palette-light-grey)); /* #E8EDF2 - tint slate lembut */
+  /* Token tema & kartu (Dominan keluarga biru + aksen tint kuning untuk highlight kecil) */
+  --color-blue: var(--palette-sky-blue); /* #0153B3 - Sky Blue utama (teks putih 7.27:1 / teks kuning 4.89:1) */
+  --color-pink: color-mix(in srgb, var(--palette-sky-blue) 85%, var(--palette-deep-navy)); /* #014BA2 - Royal Blue (teks putih 8.30:1) */
+  --color-green: var(--palette-dark-blue); /* #013A7D - Dark Blue (teks putih 11.04:1) */
+  --color-yellow: color-mix(in srgb, var(--palette-sunny) 42%, var(--palette-white)); /* #FFEB95 - Tint kuning lembut untuk highlight/sticky note kecil (teks #001E42, 13.90:1) */
+  --color-sky: color-mix(in srgb, var(--palette-sky-blue) 15%, var(--palette-white)); /* #D9E5F4 - Tint biru langit (teks #001E42, 13.02:1) */
+  --color-peach: color-mix(in srgb, var(--palette-sky-blue) 21%, var(--palette-white)); /* #CADBEF - Tint biru es (teks #001E42, 11.78:1) */
+  --color-mint: color-mix(in srgb, var(--palette-dark-blue) 14%, var(--palette-white)); /* #DBE3ED - Tint biru frost (teks #001E42, 12.83:1) */
+  --color-beige: color-mix(in srgb, var(--palette-sky-blue) 9%, var(--palette-white)); /* #E8F0F8 - Tint biru pucat untuk kartu proyek (teks #001E42, 14.43:1) */
 
-  /* Bayangan: "hard" untuk elemen UI interaktif/kartu tegas, "paper" untuk benda kertas/foto */
+  /* Bayangan: seluruhnya berbasis --color-ink (#001E42) */
   --shadow-hard-sm: 2px 2px 0 var(--color-ink);
   --shadow-hard: 3px 3px 0 var(--color-ink);
   --shadow-hard-lg: 5px 5px 0 var(--color-ink);
   --shadow-paper: 0 8px 20px color-mix(in srgb, var(--color-ink) 12%, transparent);
   --shadow-paper-lg: 0 18px 40px color-mix(in srgb, var(--color-ink) 18%, transparent);
-  /* drop-shadow untuk elemen ber-clip-path / SVG (sticky note sobek, stiker) */
   --drop-shadow-note: 2px 3px 0 color-mix(in srgb, var(--color-ink) 14%, transparent);
   --drop-shadow-paper: 0 4px 8px color-mix(in srgb, var(--color-ink) 14%, transparent);
 
@@ -123,7 +126,7 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-yellow);
+  background-color: var(--color-primary);
   color: var(--color-ink);
 }
 

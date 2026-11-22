@@ -85,7 +85,8 @@ export default function ProjectStackCard({ project, index }: ProjectStackCardPro
         hover: { x: align === "right" ? -8 : 8, transition: { type: "spring", stiffness: 300, damping: 20 } },
       };
 
-  const cardAccent = project.theme ?? project.cardColor;
+  const rawCardAccent = project.theme ?? project.cardColor;
+  const cardAccent = rawCardAccent === "yellow" ? "sky" : rawCardAccent;
   const tabAccent = project.tabColor ?? project.theme ?? project.cardColor;
   const folderText = (project.folderName || project.tabLabel).toUpperCase();
   const coverSrc = project.image || project.images.cover.src;

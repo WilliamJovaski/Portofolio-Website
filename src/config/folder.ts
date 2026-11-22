@@ -34,15 +34,15 @@ export const folder = {
   aspect: 0.8, // tinggi / lebar; harus sama dengan viewBox 120 x 96 di Folder.tsx
   frontTop: 30 / 96, // tepi atas saku depan (0-1 dari tinggi folder); sama dengan Folder.tsx
   colors: {
-    // Semua diturunkan dari kuning palet (--color-yellow) supaya seragam dengan website
-    back: "color-mix(in srgb, var(--color-yellow), var(--color-ink) 14%)", // panel belakang + tab
-    backLight: "color-mix(in srgb, var(--color-yellow), var(--color-ink) 4%)", // gradient atas panel belakang
-    front: "var(--color-yellow)", // saku depan
-    frontLight: "color-mix(in srgb, var(--color-yellow), white 30%)", // gradient atas saku
-    frontDark: "color-mix(in srgb, var(--color-yellow), var(--color-ink) 7%)", // gradient bawah saku
-    fold: "color-mix(in srgb, var(--color-yellow), var(--color-ink) 40%)", // garis lipatan
+    // Semua diturunkan dari biru dominan (--color-blue) supaya selaras dengan dominasi biru website
+    back: "color-mix(in srgb, var(--color-blue), var(--color-ink) 28%)", // panel belakang + tab
+    backLight: "color-mix(in srgb, var(--color-blue), var(--color-ink) 12%)", // gradient atas panel belakang
+    front: "var(--color-blue)", // saku depan
+    frontLight: "color-mix(in srgb, var(--color-blue), white 22%)", // gradient atas saku
+    frontDark: "color-mix(in srgb, var(--color-blue), var(--color-ink) 16%)", // gradient bawah saku
+    fold: "color-mix(in srgb, var(--color-blue), var(--color-ink) 45%)", // garis lipatan
   },
-  glowColor: "color-mix(in srgb, var(--color-yellow) 45%, transparent)", // glow hangat di belakang folder
+  glowColor: "color-mix(in srgb, var(--color-blue) 35%, transparent)", // glow biru di belakang folder
   floatDistance: 0.014, // folder melayang naik-turun sekian (x lebar folder) saat idle
   floatDuration: 3, // satu siklus melayang (detik)
   hoverTilt: -2, // kemiringan folder saat di-hover (derajat)

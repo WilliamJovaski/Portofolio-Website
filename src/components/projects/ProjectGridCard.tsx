@@ -20,7 +20,8 @@ interface ProjectGridCardProps {
 export default function ProjectGridCard({ project, index }: ProjectGridCardProps) {
   const router = useRouter();
   const reduce = useReducedMotion();
-  const color = accentBg[project.theme ?? project.cardColor];
+  const rawAccent = project.theme ?? project.cardColor;
+  const color = accentBg[rawAccent === "yellow" ? "sky" : rawAccent];
   const coverSrc = project.image || project.images.cover.src;
 
   return (

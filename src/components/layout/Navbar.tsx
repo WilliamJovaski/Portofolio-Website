@@ -82,8 +82,8 @@ export default function Navbar() {
                     "flex items-center gap-1.5 px-3 transition-colors focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-dashed focus-visible:outline-focus",
                     itemText,
                     active
-                      ? "bg-yellow font-bold text-ink"
-                      : "text-ink hover:bg-sky/70 hover:text-primary-hover active:bg-yellow"
+                      ? "bg-primary font-bold text-ink"
+                      : "text-ink hover:bg-sky/70 hover:text-link-hover active:bg-peach"
                   )}
                 >
                   <Icon name={iconFor(item.href, item.icon)} size={11} />
@@ -115,7 +115,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Tombol CONTACT (Primary CTA di Navbar) */}
+          {/* Tombol CONTACT (Primary CTA di Navbar: kuning Sunny Morning + teks biru gelap) */}
           <Link
             href={navContact.href}
             aria-current={contactActive ? "page" : undefined}
@@ -124,8 +124,8 @@ export default function Navbar() {
               itemText,
               "font-bold",
               contactActive
-                ? "bg-primary-hover text-white"
-                : "bg-primary text-white hover:bg-primary-hover active:bg-ink"
+                ? "bg-blue text-primary"
+                : "bg-primary text-ink hover:bg-primary-hover active:bg-primary-active"
             )}
           >
             <Icon name={navContact.icon} size={11} />
@@ -138,8 +138,8 @@ export default function Navbar() {
             className={cn(
               "inline-flex min-h-[44px] min-w-[44px] items-center justify-center gap-2 rounded-md border-[1.5px] border-ink px-3.5 py-2 font-mono text-xs font-bold uppercase tracking-wider shadow-hard-sm transition-all duration-150 hover:-translate-y-0.5 hover:shadow-hard active:translate-y-0 active:shadow-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-focus disabled:pointer-events-none disabled:opacity-50 md:hidden",
               open
-                ? "bg-primary-hover text-white hover:bg-primary active:bg-ink"
-                : "bg-white text-ink hover:border-primary hover:bg-sky hover:text-primary-hover active:bg-yellow"
+                ? "bg-blue text-primary hover:bg-green active:bg-ink"
+                : "bg-white text-ink hover:border-link hover:bg-sky hover:text-link-hover active:bg-peach"
             )}
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -170,8 +170,8 @@ export default function Navbar() {
                     className={cn(
                       "flex min-h-[48px] items-center gap-3 rounded-md border-[1.5px] px-4 py-3 font-mono text-sm font-bold uppercase tracking-wider transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-focus",
                       active
-                        ? "border-ink bg-primary text-white shadow-hard-sm"
-                        : "border-transparent bg-paper text-ink hover:border-primary hover:bg-sky hover:text-primary-hover active:bg-yellow"
+                        ? "border-ink bg-primary text-ink shadow-hard-sm"
+                        : "border-transparent bg-paper text-ink hover:border-link hover:bg-sky hover:text-link-hover active:bg-peach"
                     )}
                   >
                     <Icon name={iconFor(item.href, item.icon)} size={15} />
