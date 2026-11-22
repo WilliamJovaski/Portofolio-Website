@@ -33,7 +33,7 @@ const highlight: Record<Accent, string> = {
 };
 
 // Warna kertas untuk variant "sticky": versi pastel dari warna aksen palet
-const stickyBg = (accent: Accent) => `color-mix(in srgb, var(--color-${accent}) 28%, var(--varden))`;
+const stickyBg = (accent: Accent) => `color-mix(in srgb, var(--color-${accent}) 28%, var(--color-paper))`;
 
 // Kertas krem (kartu pos, perangko) diturunkan dari beige palet
 const CREAM = "color-mix(in srgb, var(--color-beige) 40%, white)";
@@ -199,7 +199,7 @@ function StickyPaper({ w, accent, label }: { w: number; accent: Accent; label: R
         {/* spiral */}
         <path d="M72 30c0-4 6-4 6 0s-10 7-11 0 9-12 16-6 3 18-8 17-15-10-9-19" />
         {/* logo */}
-        <circle cx="40" cy="72" r="15" fill="#fff" stroke="var(--color-ink)" strokeWidth="1.2" />
+        <circle cx="40" cy="72" r="15" fill="var(--color-white)" stroke="var(--color-ink)" strokeWidth="1.2" />
         <image href="/images/logo.png" x="26" y="58" width="28" height="28" />
         {/* coretan kecil */}
         <path d="M70 70q5-6 10 0t10 0" />

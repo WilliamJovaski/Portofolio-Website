@@ -70,7 +70,7 @@ const paths: Record<IconName, ReactNode> = {
   linkedin: (
     <>
       <rect x="3" y="3" width="18" height="18" rx="3" fill="currentColor" />
-      <path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+      <path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7" stroke="var(--color-white)" strokeWidth="2" strokeLinecap="round" />
     </>
   ),
   instagram: (
@@ -109,7 +109,7 @@ const paths: Record<IconName, ReactNode> = {
   ring: (
     <>
       <circle cx="12" cy="12" r="10" fill="var(--color-green)" />
-      <circle cx="12" cy="12" r="6" fill="#fff" />
+      <circle cx="12" cy="12" r="6" fill="var(--color-white)" />
       <circle cx="12" cy="12" r="3" fill="var(--color-ink)" />
     </>
   ),

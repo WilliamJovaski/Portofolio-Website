@@ -12,13 +12,16 @@ export type Accent =
   | "white"
   | "ink";
 
-// Pasangan latar + teks dipilih agar kontras >= 4.5:1 (lihat palet di globals.css).
+// Pasangan latar + teks dipilih agar kontras >= 4.5:1 (WCAG AA):
+// - Light Blue (#0EA5E9 / bg-blue) dipasangkan dengan Black (#0F172A / text-ink) -> 6.44:1
+// - Blue (#0077CC / bg-pink) dipasangkan dengan White (#FFFFFF / text-white) -> 4.66:1
+// - Dark Blue (#004A80 / bg-green) dipasangkan dengan White (#FFFFFF / text-white) -> 9.17:1
+// - Black (#0F172A / bg-ink) dipasangkan dengan White (#FFFFFF / text-white) -> 17.85:1
 export const accentBg: Record<Accent, string> = {
   yellow: "bg-yellow text-ink",
-  pink: "bg-pink text-white", // Crimson Blaze + putih (6.2:1)
-  green: "bg-green text-white", // Gochujang Red + putih (11.7:1)
-  blue: "bg-blue text-ink", // Blue Marble + Cosmos (4.75:1); putih hanya 3:1
-
+  pink: "bg-pink text-white",
+  green: "bg-green text-white",
+  blue: "bg-blue text-ink",
   sky: "bg-sky text-ink",
   peach: "bg-peach text-ink",
   mint: "bg-mint text-ink",

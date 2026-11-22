@@ -1,41 +1,51 @@
 @import "tailwindcss";
 
-/* ================================================================ PALET (5 warna)
+/* ================================================================ PALET (6 warna basis wajib)
    Satu-satunya sumber warna di website. Semua token Tailwind di @theme diturunkan dari sini. */
 :root {
-  --varden: #f5f0e8; /* background utama semua halaman */
-  --gochujang-red: #780000; /* merah tua: blok gelap, teks putih di atasnya */
-  --crimson-blaze: #c1121f; /* aksen merah: chip/tab/stiker (teks putih), teks aksen di atas Varden */
-  --cosmos-blue: #003049; /* teks utama, border, bayangan keras, tombol solid */
-  --blue-marble: #669bbc; /* aksen biru: blok terang (teks Cosmos di atasnya) */
+  --palette-blue: #0077cc; /* Primary CTA, aksen interaktif utama */
+  --palette-light-blue: #0ea5e9; /* Aksen cerah (wajib teks gelap #0F172A di atasnya), basis tint permukaan */
+  --palette-dark-blue: #004a80; /* Primary CTA hover/active, link teks, blok gelap */
+  --palette-black: #0f172a; /* Teks utama, heading, border utama, bayangan keras */
+  --palette-white: #ffffff; /* Permukaan kartu putih, tombol sekunder, teks di atas warna gelap */
+  --palette-light-grey: #f8fafc; /* Background utama semua halaman */
 }
 
-/* Token Tailwind (bg-yellow, text-pink, ...). Nama lama dipertahankan supaya tidak ada komponen yang berubah
-   struktur; nilainya sekarang dipetakan ke palet di atas.
-   Aturan kontras (WCAG AA):
-   - Latar terang (paper, yellow, sky, peach, mint, beige, blue) -> teks Cosmos (text-ink).
-   - Latar gelap (pink, green, ink) -> teks putih.
-   Tint terang = palet dicampur Varden (color-mix), jadi tetap turunan dari 5 warna. */
+/* Token Tailwind & Design Tokens.
+   Aturan kontras (WCAG AA >= 4.5:1):
+   - Latar terang (paper, paper-light, white, yellow, sky, peach, mint, beige, blue #0EA5E9) -> teks Black (#0F172A).
+   - Latar gelap (primary #0077CC, primary-hover #004A80, pink #0077CC, green #004A80, ink #0F172A) -> teks White (#FFFFFF). */
 @theme {
-  --color-paper: var(--varden);
-  --color-paper-line: color-mix(in srgb, var(--cosmos-blue) 10%, transparent);
-  --color-paper-light: color-mix(in srgb, var(--varden), white 65%);
-  --color-yellow: color-mix(in srgb, var(--blue-marble) 45%, var(--varden)); /* highlight utama (nav aktif, tombol) */
-  --color-pink: var(--crimson-blaze);
-  --color-green: var(--gochujang-red);
-  --color-blue: var(--blue-marble);
-  --color-sky: color-mix(in srgb, var(--blue-marble) 30%, var(--varden));
-  --color-peach: color-mix(in srgb, var(--crimson-blaze) 22%, var(--varden));
-  --color-mint: color-mix(in srgb, var(--cosmos-blue) 12%, var(--varden));
-  --color-beige: color-mix(in srgb, var(--gochujang-red) 10%, var(--varden));
-  --color-ink: var(--cosmos-blue);
+  /* Token semantik utama */
+  --color-paper: var(--palette-light-grey);
+  --color-paper-light: var(--palette-white);
+  --color-paper-line: color-mix(in srgb, var(--palette-dark-blue) 11%, transparent);
+  --color-white: var(--palette-white);
+  --color-ink: var(--palette-black);
 
-  /* Bayangan: "hard" untuk elemen UI (tombol, chip, kartu, tile), "paper" untuk benda kertas/foto */
+  /* Token interaktif (hierarki tombol, link, fokus) */
+  --color-primary: var(--palette-blue);
+  --color-primary-hover: var(--palette-dark-blue);
+  --color-link: var(--palette-dark-blue);
+  --color-link-hover: var(--palette-blue);
+  --color-focus: var(--palette-blue);
+
+  /* Token aksen & permukaan kartu/stiker (turunan murni dari 6 warna palet) */
+  --color-yellow: color-mix(in srgb, var(--palette-light-blue) 28%, var(--palette-white)); /* #BCE6F9 - highlight & sticky note aktif */
+  --color-pink: var(--palette-blue); /* #0077CC - aksen biru solid (teks putih, 4.66:1) */
+  --color-green: var(--palette-dark-blue); /* #004A80 - aksen biru tua solid (teks putih, 9.17:1) */
+  --color-blue: var(--palette-light-blue); /* #0EA5E9 - aksen biru cerah (teks hitam #0F172A, 6.44:1) */
+  --color-sky: color-mix(in srgb, var(--palette-light-blue) 20%, var(--palette-light-grey)); /* #C8E8F8 - tint biru langit */
+  --color-peach: color-mix(in srgb, var(--palette-blue) 15%, var(--palette-light-grey)); /* #D3E6F5 - tint biru es */
+  --color-mint: color-mix(in srgb, var(--palette-dark-blue) 12%, var(--palette-light-grey)); /* #DAE5EE - tint biru-abu */
+  --color-beige: color-mix(in srgb, var(--palette-black) 7%, var(--palette-light-grey)); /* #E8EDF2 - tint slate lembut */
+
+  /* Bayangan: "hard" untuk elemen UI interaktif/kartu tegas, "paper" untuk benda kertas/foto */
   --shadow-hard-sm: 2px 2px 0 var(--color-ink);
   --shadow-hard: 3px 3px 0 var(--color-ink);
   --shadow-hard-lg: 5px 5px 0 var(--color-ink);
-  --shadow-paper: 0 8px 20px color-mix(in srgb, var(--color-ink) 14%, transparent);
-  --shadow-paper-lg: 0 18px 40px color-mix(in srgb, var(--color-ink) 20%, transparent);
+  --shadow-paper: 0 8px 20px color-mix(in srgb, var(--color-ink) 12%, transparent);
+  --shadow-paper-lg: 0 18px 40px color-mix(in srgb, var(--color-ink) 18%, transparent);
   /* drop-shadow untuk elemen ber-clip-path / SVG (sticky note sobek, stiker) */
   --drop-shadow-note: 2px 3px 0 color-mix(in srgb, var(--color-ink) 14%, transparent);
   --drop-shadow-paper: 0 4px 8px color-mix(in srgb, var(--color-ink) 14%, transparent);
@@ -117,9 +127,9 @@ body {
   color: var(--color-ink);
 }
 
-/* Fokus keyboard selalu terlihat */
+/* Fokus keyboard selalu terlihat jelas */
 :focus-visible {
-  outline: 2px dashed var(--color-ink);
+  outline: 2px dashed var(--color-focus);
   outline-offset: 3px;
 }
 

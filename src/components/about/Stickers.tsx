@@ -90,7 +90,7 @@ export function StarSticker() {
       <path
         d="M50 6 61 37h33L67 57l10 33-27-20-27 20 10-33L6 37h33z"
         fill="var(--color-pink)"
-        stroke="#fff"
+        stroke="var(--color-white)"
         strokeWidth="7"
         strokeLinejoin="round"
         paintOrder="stroke"

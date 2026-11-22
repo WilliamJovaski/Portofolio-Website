@@ -69,7 +69,7 @@ export default function CertificatesSection() {
                 type="button"
                 onClick={(e) => openCertificate(i, e.currentTarget)}
                 aria-label={`Lihat sertifikat: ${c.title}`}
-                className="group block w-full cursor-zoom-in text-left focus-visible:outline-none"
+                className="group block w-full cursor-zoom-in rounded-[4px] text-left focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-dashed focus-visible:outline-focus"
               >
                 {/* Preview foto sertifikat */}
                 <div className="overflow-hidden rounded-[4px] border border-ink/20 bg-white p-1.5 shadow-sm transition-shadow group-hover:shadow-md">
@@ -94,7 +94,7 @@ export default function CertificatesSection() {
                 <h3 className="mt-1 font-sans text-base leading-snug font-semibold sm:text-lg">
                   {c.title}
                 </h3>
-                <span className="mt-2.5 inline-flex items-center gap-1 font-mono text-[11px] font-bold tracking-wider uppercase underline underline-offset-4">
+                <span className="mt-2.5 inline-flex items-center gap-1 font-mono text-[11px] font-bold tracking-wider text-link uppercase underline underline-offset-4 transition-colors group-hover:text-link-hover group-active:text-ink">
                   Click to view
                 </span>
               </button>

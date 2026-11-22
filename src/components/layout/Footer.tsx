@@ -14,12 +14,12 @@ export default function Footer() {
           <p className="font-hand text-sm text-ink/80">{footer.note}</p>
         </div>
 
-        <ul className="flex flex-wrap justify-center gap-x-2 gap-y-1 font-mono text-[11px] uppercase tracking-wider md:gap-x-4">
+        <ul className="flex flex-wrap justify-center gap-x-2 gap-y-1 font-mono text-[11px] font-semibold uppercase tracking-wider md:gap-x-4">
           {nav.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="inline-flex min-h-[44px] items-center px-2 hover:underline md:min-h-0 md:px-0"
+                className="inline-flex min-h-[44px] items-center px-2 text-link underline-offset-4 transition-colors hover:text-link-hover hover:underline active:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-focus md:min-h-0 md:px-0"
               >
                 {item.label}
               </Link>
@@ -35,7 +35,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="grid size-11 min-h-[44px] min-w-[44px] place-items-center rounded-full border-[1.5px] border-ink bg-white shadow-hard-sm transition-[translate,background-color] hover:-translate-y-0.5 hover:bg-yellow md:size-9 md:min-h-0 md:min-w-0"
+                className="grid size-11 min-h-[44px] min-w-[44px] place-items-center rounded-full border-[1.5px] border-primary bg-white text-primary-hover shadow-hard-sm transition-[translate,background-color,color,border-color] hover:-translate-y-0.5 hover:border-ink hover:bg-sky hover:text-ink active:translate-y-0 active:bg-yellow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-focus md:size-9 md:min-h-0 md:min-w-0"
               >
                 <Icon name={s.icon} size={16} />
               </a>

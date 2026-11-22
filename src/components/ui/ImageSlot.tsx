@@ -99,7 +99,7 @@ function PhotoShapes() {
       preserveAspectRatio="none"
       className="absolute inset-0 h-full w-full opacity-30 mix-blend-soft-light"
     >
-      <circle cx="72" cy="28" r="12" fill="#fff" />
+      <circle cx="72" cy="28" r="12" fill="var(--color-white)" />
       <path d="M0 78 28 52l18 16 22-24 32 34v22H0z" fill="var(--color-ink)" />
     </svg>
   );

@@ -17,7 +17,7 @@ interface ProjectActionButtonsProps {
 }
 
 const btnBase =
-  "inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border-[1.5px] border-ink px-4 py-2 font-mono text-sm font-bold uppercase tracking-wider shadow-hard-sm transition-all duration-150 hover:-translate-y-0.5 hover:shadow-hard active:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-dashed focus-visible:outline-ink";
+  "inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border-[1.5px] px-4 py-2 font-mono text-sm font-bold uppercase tracking-wider shadow-hard-sm transition-all duration-150 hover:-translate-y-0.5 hover:shadow-hard active:translate-y-0 active:shadow-none focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-dashed focus-visible:outline-focus disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none";
 
 function GitHubIcon({ size = 16 }: { size?: number }) {
   return (
@@ -37,7 +37,7 @@ function GitHubIcon({ size = 16 }: { size?: number }) {
   );
 }
 
-/** Tombol aksi proyek: "View Project" (solid kuning) & "View Repository" (outline putih + ikon GitHub). */
+/** Tombol aksi proyek: "View Project" (Primary CTA: Blue solid) & "View Repository" (Secondary: White outline). */
 export default function ProjectActionButtons({
   slug,
   title,
@@ -52,8 +52,8 @@ export default function ProjectActionButtons({
   return (
     <div className={cn("relative z-10 flex flex-wrap items-center gap-3", className)}>
       {isUpcoming && !showViewProject && !hasRepo && (
-        <span className="inline-flex min-h-10 items-center gap-2.5 rounded-full border-[1.5px] border-dashed border-ink bg-paper-light px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-ink shadow-hard-sm">
-          <span aria-hidden="true" className="size-2.5 rounded-full border border-ink bg-yellow" />
+        <span className="inline-flex min-h-10 items-center gap-2.5 rounded-full border-[1.5px] border-dashed border-ink bg-paper-light px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-ink">
+          <span aria-hidden="true" className="size-2.5 rounded-full border border-ink bg-blue" />
           <span>Upcoming · On Progress</span>
         </span>
       )}
@@ -62,7 +62,10 @@ export default function ProjectActionButtons({
         <Link
           href={`/case-study/${slug}`}
           onClick={(e) => e.stopPropagation()}
-          className={cn(btnBase, "bg-yellow text-ink hover:bg-yellow/90")}
+          className={cn(
+            btnBase,
+            "border-ink bg-primary text-white hover:bg-primary-hover active:bg-ink"
+          )}
         >
           <span>{caseStudy.viewLabel}</span>
           <Icon name="arrow-up-right" size={14} />
@@ -76,7 +79,10 @@ export default function ProjectActionButtons({
           rel="noopener noreferrer"
           aria-label={`View repository for ${title} on GitHub`}
           onClick={(e) => e.stopPropagation()}
-          className={cn(btnBase, "bg-white text-ink hover:bg-paper")}
+          className={cn(
+            btnBase,
+            "border-primary bg-white text-primary-hover hover:border-ink hover:bg-sky hover:text-ink active:bg-yellow"
+          )}
         >
           <GitHubIcon size={16} />
           <span>View Repository</span>

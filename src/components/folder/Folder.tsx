@@ -69,7 +69,7 @@ export default function Folder({ width, height, open, children }: FolderProps) {
           fill={`url(#${id}-back)`}
         />
         {/* Garis tepi tab yang sedikit lebih terang */}
-        <path d="M3 13Q4 10 8 10H34" stroke="#fff" strokeOpacity="0.45" strokeWidth="0.8" fill="none" strokeLinecap="round" />
+        <path d="M3 13Q4 10 8 10H34" stroke="var(--color-white)" strokeOpacity="0.45" strokeWidth="0.8" fill="none" strokeLinecap="round" />
       </svg>
 
       {/* Slot kertas: area besar ke atas & samping, tapi terpotong rata di sisi bawah folder */}
@@ -103,7 +103,7 @@ export default function Folder({ width, height, open, children }: FolderProps) {
           </defs>
           <path d="M0 36Q0 30 6 30H114Q120 30 120 36V90Q120 96 114 96H6Q0 96 0 90Z" fill={`url(#${id}-front)`} />
           {/* Highlight tipis di tepi atas */}
-          <path d="M6 31.3H114" stroke="#fff" strokeOpacity="0.75" strokeWidth="1" strokeLinecap="round" />
+          <path d="M6 31.3H114" stroke="var(--color-white)" strokeOpacity="0.75" strokeWidth="1" strokeLinecap="round" />
           {/* Garis lipatan */}
           <path d="M3 39.5H117" style={{ stroke: colors.fold }} strokeOpacity="0.28" strokeWidth="0.5" />
           {/* Label kecil di saku */}
@@ -113,7 +113,7 @@ export default function Folder({ width, height, open, children }: FolderProps) {
           </g>
           {/* Stiker logo */}
           <g transform="rotate(10 101 79)">
-            <circle cx="101" cy="79" r="8.6" fill="#fff" stroke="var(--color-ink)" strokeWidth="0.8" />
+            <circle cx="101" cy="79" r="8.6" fill="var(--color-white)" stroke="var(--color-ink)" strokeWidth="0.8" />
             <image href="/images/logo.png" x="93" y="71" width="16" height="16" />
           </g>
         </svg>
